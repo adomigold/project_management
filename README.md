@@ -1,7 +1,3 @@
-Here’s a structured `README.md` documentation for your Laravel-based Project Management System:
-
----
-
 # **Project Management System**
 
 A Laravel-based Project Management System designed to manage users, projects, and tasks with robust authentication, role-based access control, and RESTful APIs. The system provides an efficient way to handle project assignments and monitor task progress.
@@ -49,8 +45,8 @@ A Laravel-based Project Management System designed to manage users, projects, an
 ### Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repository/project-management-system.git
-   cd project-management-system
+   git clone https://github.com/adomigold/project_management.git
+   cd project_management
    ```
 
 2. Install dependencies:
@@ -94,11 +90,19 @@ A Laravel-based Project Management System designed to manage users, projects, an
 - **Login**: `POST /api/login`
 - **Logout**: `POST /api/logout`
 
+### Roles and Permissions Endpoints (Admin only)
+- **View All Roles**: `GET /api/roles`
+- **Create Role**: `POST /api/roles`
+- **Update Role**: `PUT /api/roles/{id}`
+- **Delete Role**: `DELETE /api/roles/{id}`
+- **Assign Permission**: `PATCH /api/roles/{id}/assign-permissions`
+- **Remove Permission**: `PATCH /api/roles/{id}/remove-permissions`
+
 ### User Management Endpoints (Admin only)
 - **Create User**: `POST /api/users`
 - **Update User**: `PUT /api/users/{id}`
 - **Delete User**: `DELETE /api/users/{id}`
-- **Assign Role**: `PATCH /api/users/{id}/role`
+- **Assign Role**: `PATCH /api/users/{id}/assign-role`
 
 ### Project Management Endpoints
 - **Create Project**: `POST /api/projects`
@@ -140,7 +144,7 @@ A Laravel-based Project Management System designed to manage users, projects, an
 1. **Spatie Laravel Permission**: Role and permission management.
 2. **Laravel Sanctum**: JWT-based authentication.
 3. **Laravel Queue**: For email notifications.
-4. **Mailtrap**: For testing email notifications.
+4. **Google Mail**: For testing email notifications.
 5. **Redis (Optional)**: For caching.
 
 ---
@@ -155,7 +159,6 @@ php artisan test
 
 ### Manual Testing
 Use tools like Postman to test the APIs:
-1. Import the provided Postman collection (if available).
 2. Test each endpoint using appropriate request bodies and headers.
 
 ---
@@ -165,22 +168,3 @@ Use tools like Postman to test the APIs:
 2. Search and filter functionalities may require optimization for large datasets.
 
 ---
-
-## **Future Improvements**
-- Add real-time notifications using WebSockets.
-- Implement a UI for the system using React.js or Vue.js.
-- Enhance task assignment with drag-and-drop functionality.
-
----
-
-## **Contributing**
-Contributions are welcome! Please fork the repository, make your changes, and submit a pull request.
-
----
-
-## **License**
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-Feel free to customize this further based on your project specifics or additional features implemented.
